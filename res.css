@@ -293,7 +293,7 @@ footer img{
         display: block;
         height: 40px;
         width: 100%;
-        background: url(img/bay/line.png) no-repeat 100% center;
+        background: url(images/line.png) no-repeat 100% center;
         /* background-color: red; */
         cursor: pointer;
     }
