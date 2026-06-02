@@ -294,7 +294,6 @@ footer img{
         height: 40px;
         width: 100%;
         background: url(images/line.png) no-repeat 100% center;
-        background-color: red;
         cursor: pointer;
     }
     header nav{
