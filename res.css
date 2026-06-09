@@ -5,6 +5,7 @@
     --light:#002d11;
     --dark:#ffffff;
     --wonder:#012d03;
+    --woah : #F5F5DC;
     
 }
 
@@ -35,19 +36,29 @@ header{
 
 nav{
     display:flex;
+    /* flex-wrap: wrap; */
     justify-content:space-between;
     align-items:center;
 }
 
+.burger-nav{
+    display: none;
+    font-size: 2rem;
+    color: var(--woah);
+    font-weight: bold;
+}
+
 .logo{
-    color:#F5F5DC;
+    color:var(--woah);
     font-size:2rem;
     font-weight:bold;
+    white-space: nowrap;
 }
 
 nav ul{
     list-style:none;
     display:flex;
+    width: 100%;
 }
 
 nav ul li{
@@ -95,7 +106,7 @@ nav ul li a:hover{
     display:inline-block;
     padding:12px 25px;
     background:var(--accent);
-    color:rgb(255, 8, 8);
+    color:var(--woah);
     text-decoration:none;
     border-radius:5px;
 }
@@ -151,7 +162,7 @@ section{
 
 .menu-grid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(3,1fr);
     gap:20px;
 }
 
@@ -165,10 +176,31 @@ section{
 
 .price{
     margin-top:10px;
-    color:var(--primary);
+    color:var(--woah);
     font-weight:bold;
 }
 
+/* FULL Menu */
+.full-menu{
+    background:var(--primary);
+    padding:30px;
+    text-align:left;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    line-height: 24px;
+}
+.full-menu h3{
+    color: #e5c122;
+    font-weight: bold;
+}
+
+.full-menu .mandi h4{
+    color: #e5c122;
+}
+.line{
+    display: flex;
+    justify-content: space-between;
+}
 /* Gallery */
 
 .gallery{
@@ -259,7 +291,9 @@ footer img{
 @media screen and (max-width:600px) {
 
     header nav{
+        display: flex;
         flex-direction: column;
+        justify-content: space-between;
         align-items: center;
         padding: 0;
     }
@@ -289,18 +323,21 @@ footer img{
 /* Mobile style */
 
 @media screen and (max-width: 450px){
-    .burger-nav{
-        display: block;
-        height: 40px;
-        width: 100%;
-        background: url(images/line.png) no-repeat 100% center;
-        cursor: pointer;
-    }
     header nav{
+        justify-content: right;
         float: none;
         clear: left;
         width: 100%;
     }
+    .burger-nav{
+        display: block;
+        height: auto;
+        width: auto;
+        
+        text-align: right;
+        cursor: pointer;
+    }
+
 
     header .wrapper{
         width: 100%;
@@ -308,13 +345,15 @@ footer img{
     }
 
     header nav ul{
+        width: 100%;
         overflow: hidden;
-        /* background-color: #99cf9f; */
         height: 0;
+        justify-content: right;
     }
 
     header nav ul.open{
         height: auto;
+        margin-top: 20px;
     }
 
     header nav ul li{
@@ -326,7 +365,6 @@ footer img{
 
     header nav ul li a{
         padding: 20px;
-        /* border-bottom: 1px solid blue; */
         color: white;
         display: block;
         margin: 0;
@@ -360,5 +398,4 @@ footer img{
 
 
 }
-
 
