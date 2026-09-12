@@ -76,12 +76,11 @@ a {
 
 header {
     background: var(--primary);
+
     padding: 8px 8%;
 
     position: sticky;
     top: 0;
-
-    width: 100%;
 
     z-index: 1000;
 
@@ -89,98 +88,76 @@ header {
 }
 
 
-/* =========================================================
-   FIXED HEADER
-   ========================================================= */
-
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 70px;
-    z-index: 9999;
-}
-
-body {
-    padding-top: 70px;
-}
-
-
-
-
 header nav {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
     width: 100%;
 }
 
 
 .all {
-    width: 100%;
-
     display: flex;
     align-items: center;
-}
 
+    width: 100%;
+}
 
 
 .bay {
-    width: 100%;
-
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 
-
 .logo {
-    width: 100%;
+    color: var(--white);
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    white-space: nowrap;
 
     display: flex;
     align-items: center;
-
-    color: var(--white);
-
-    white-space: nowrap;
+    width: 100%;
 }
 
 
 .logo h1 {
     margin: 0;
-
-    font-size: 1.6rem;
-    font-weight: bold;
 }
 
 
-
-
 .just {
-    margin-left: auto;
-
     display: flex;
-    align-items: center;
+
+    justify-content: flex-end;
+
+    flex: 1;
 }
 
 
 .just ul {
     display: flex;
     align-items: center;
-
     list-style: none;
-
-    gap: 25px;
-
-    margin: 0;
-    padding: 0;
+    gap: 20px;
 }
 
 
 nav ul {
     list-style: none;
+
+    display: flex;
 }
 
+
 nav ul li {
-    margin: 0;
+    margin-left: 25px;
 }
 
 
@@ -188,8 +165,6 @@ nav ul li a {
     color: var(--accent);
 
     text-decoration: none;
-
-    white-space: nowrap;
 
     transition: var(--transition);
 }
@@ -200,29 +175,21 @@ nav ul li a:hover {
 }
 
 
-
-
 /* Hamburger */
-
 
 .burger-nav {
     display: none;
 
-    margin-left: auto;
+    font-size: 2rem;
 
     color: var(--woah);
 
-    font-size: 1.8rem;
     font-weight: bold;
 
     cursor: pointer;
 
     text-decoration: none;
-
-    line-height: 1;
 }
-
-
 
 
 
@@ -552,6 +519,39 @@ section {
 
 
 /* =========================================================
+   CONTACT
+========================================================= */
+/* 
+.contact {
+    text-align: center;
+
+    line-height: 2;
+
+    color: var(--dark);
+}
+
+
+.contact a,
+.contact .loc,
+.contact .mob,
+.contact .mail {
+    color: var(--primary);
+}
+
+
+.contact a {
+    text-decoration: none;
+
+    transition: var(--transition);
+}
+
+
+.contact a:hover {
+    color: var(--accent);
+}
+ */
+
+/* =========================================================
    FOOTER
 ========================================================= */
 
@@ -708,7 +708,38 @@ section {
     transform: translateY(-5px);
 }
 
+/* .footer-social {
+    display: flex;
 
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+
+.footer-social a {
+    width: 42px;
+
+    height: 42px;
+
+    border: 1px solid var(--accent);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: var(--accent);
+
+    text-decoration: none;
+
+    transition: var(--transition);
+} */
 
 
 /* Icons */
@@ -940,586 +971,181 @@ section {
    TABLET
 ========================================================= */
 
-/* =========================================================
-   HEADER - 701px TO 960px
-   SINGLE ROW NAVIGATION
-   NO HAMBURGER
-   ========================================================= */
+@media screen and (max-width: 960px) {
 
-@media screen and (min-width: 701px) and (max-width: 960px) {
-
-    /* HEADER */
-    header {
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-
-        width: 100% !important;
-
-        margin: 0 !important;
-        padding: 10px 5% !important;
-
-        box-sizing: border-box !important;
-
-        z-index: 99999 !important;
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 250px);
+        gap: 12
     }
 
-    /* WRAPPER */
-    header .wrapper {
-        width: 100% !important;
+    /* Features */
 
-        margin: 0 !important;
-        padding: 0 !important;
-    }
+     .features {
+        grid-template-columns: repeat(2, 1fr);
 
-    /* NAV */
-    header nav {
-        width: 100% !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    /* ALL */
-    .all {
-        width: 100% !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    /* MAIN HEADER ROW */
-    .bay {
-        width: 100% !important;
-
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: center !important;
-
-        flex-wrap: nowrap !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    /* =====================================================
-       WHITE BAY
-       ===================================================== */
-
-    .logo {
-        width: auto !important;
-
-        display: flex !important;
-        align-items: center !important;
-
-        flex-shrink: 0 !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    .logo h1 {
-        margin: 0 !important;
-        padding: 0 !important;
-
-        font-size: 1.5rem !important;
-        line-height: 1.2 !important;
-
-        white-space: nowrap !important;
-    }
-
-    /* =====================================================
-       HIDE HAMBURGER
-       ===================================================== */
-
-    .burger-nav {
-        display: none !important;
-
-        visibility: hidden !important;
-
-        width: 0 !important;
-        height: 0 !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    /* =====================================================
-       NAVIGATION AREA
-       ===================================================== */
-
-    .just {
-        width: auto !important;
-
-        display: flex !important;
-
-        flex: 1 1 auto !important;
-
-        justify-content: flex-end !important;
-
-        margin-left: auto !important;
-
-        min-width: 0 !important;
-    }
-
-    /* =====================================================
-       NAVIGATION LIST
-       ===================================================== */
-
-    .just ul,
-    header nav ul {
-        position: static !important;
-
-        width: auto !important;
-
-        display: flex !important;
-
-        flex-direction: row !important;
-
-        align-items: center !important;
-        justify-content: flex-end !important;
-
-        flex-wrap: nowrap !important;
-
-        gap: 15px !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-
-        max-height: none !important;
-
-        overflow: visible !important;
-
-        opacity: 1 !important;
-        visibility: visible !important;
-
-        background: transparent !important;
-    }
-
-    /* =====================================================
-       NAVIGATION ITEMS
-       ===================================================== */
-
-    .just ul li,
-    header nav ul li {
-        display: block !important;
-
-        width: auto !important;
-
-        flex-shrink: 0 !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    /* =====================================================
-       NAVIGATION LINKS
-       ===================================================== */
-
-    .just ul li a,
-    header nav ul li a {
-        display: block !important;
-
-        width: auto !important;
-
-        margin: 0 !important;
-
-        padding: 7px 2px !important;
-
-        font-size: 0.95rem !important;
-
-        line-height: 1.2 !important;
-
-        white-space: nowrap !important;
-
-        text-decoration: none !important;
-    }
-
-    /* =====================================================
-       FIXED HEADER SPACE
-       ===================================================== */
-
-    body {
-        padding-top: 70px !important;
-    }
-}
-
-
-/* =========================================================
-   HEADER - 700px AND BELOW
-   MOBILE HAMBURGER MENU
-   ========================================================= */
-
-@media screen and (max-width: 700px) {
-
-    /* =====================================================
-       PAGE
-       ===================================================== */
-
-    html,
-    body {
-        width: 100% !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-
-        overflow-x: hidden !important;
+        gap: 20px;
     }
 
 
-    /* =====================================================
-       FIXED HEADER
-       ===================================================== */
+    /* Menu */
+ 
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
 
-    header {
-        position: fixed !important;
+        gap: 15px;
+    } 
 
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
 
-        width: 100% !important;
-
-        height: auto !important;
-
-        margin: 0 !important;
-        padding: 10px 5% !important;
-
-        box-sizing: border-box !important;
-
-        z-index: 99999 !important;
+    /* Gallery */
+ 
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 250px);
+        gap: 12px;
     }
 
-
-    /* =====================================================
-       HEADER WRAPPER
-       ===================================================== */
-
-    header .wrapper {
-        width: 100% !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
+    /* Reset desktop positioning */
+    .item-1,
+    .item-2,
+    .item-3,
+    .item-4,
+    .item-5,
+    .item-6 {
+        grid-column: auto;
+        grid-row: auto;
     }
 
-
-    /* =====================================================
-       NAV
-       ===================================================== */
-
-    header nav {
-        width: 100% !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
+    .item-1 {
+        grid-column: 1;
+        grid-row: 1;
     }
 
-
-    /* =====================================================
-       MAIN HEADER CONTAINER
-       ===================================================== */
-
-    .all {
-        width: 100% !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
+    .item-2 {
+        grid-column: 2;
+        grid-row: 1;
     }
 
-
-    /* =====================================================
-       HEADER ROW
-       ===================================================== */
-
-    .bay {
-        width: 100% !important;
-
-        display: flex !important;
-
-        flex-direction: row !important;
-
-        align-items: center !important;
-
-        flex-wrap: nowrap !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
+    .item-3 {
+        grid-column: 1;
+        grid-row: 2;
     }
 
-
-    /* =====================================================
-       LOGO + HAMBURGER
-       ===================================================== */
-
-    .logo {
-        width: 100% !important;
-
-        display: flex !important;
-
-        align-items: center !important;
-
-        justify-content: space-between !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-
-        flex-shrink: 1 !important;
+    .item-4 {
+        grid-column: 2;
+        grid-row: 2;
     }
 
-
-    /* =====================================================
-       WHITE BAY
-       ===================================================== */
-
-    .logo h1 {
-        margin: 0 !important;
-        padding: 0 !important;
-
-        font-size: 1.5rem !important;
-
-        line-height: 1.2 !important;
-
-        white-space: nowrap !important;
+    .item-5 {
+        grid-column: 1;
+        grid-row: 3;
     }
 
-
-    /* =====================================================
-       HAMBURGER
-       ===================================================== */
-
-    .burger-nav {
-        display: block !important;
-
-        visibility: visible !important;
-
-        width: auto !important;
-        height: auto !important;
-
-        margin-left: auto !important;
-        padding: 0 !important;
-
-        font-size: 1.8rem !important;
-
-        line-height: 1 !important;
-
-        color: var(--woah) !important;
-
-        text-decoration: none !important;
-
-        cursor: pointer;
-
-        flex-shrink: 0 !important;
-
-        z-index: 100001 !important;
+    .item-6 {
+        grid-column: 2;
+        grid-row: 3;
     }
 
+    /* Navigation */
 
-    .burger-nav:hover {
-        color: var(--accent) !important;
-    }
+    nav ul {
+        flex-wrap: wrap;
 
-
-    /* =====================================================
-       NORMAL NAVIGATION CONTAINER
-       ===================================================== */
-
-    .just {
-        position: static !important;
-
-        width: 0 !important;
-
-        flex: 0 0 0 !important;
-
-        margin: 0 !important;
-
-        padding: 0 !important;
-    }
-
-
-    /* =====================================================
-       MOBILE MENU - CLOSED
-       ===================================================== */
-
-    header nav ul {
-        position: absolute !important;
-
-        top: 100% !important;
-        left: 0 !important;
-
-        width: 100% !important;
-
-        display: flex !important;
-
-        flex-direction: column !important;
-
-        align-items: stretch !important;
-
-        list-style: none !important;
-
-        background: var(--primary) !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-
-        max-height: 0 !important;
-
-        overflow: hidden !important;
-
-        opacity: 0 !important;
-
-        visibility: hidden !important;
-
-        z-index: 100000 !important;
-
-        transition:
-            max-height 0.3s ease,
-            opacity 0.3s ease,
-            visibility 0.3s ease;
-    }
-
-
-    /* =====================================================
-       MOBILE MENU - OPEN
-       ===================================================== */
-
-    header nav ul.open {
-        max-height: 400px !important;
-
-        padding: 10px 0 !important;
-
-        opacity: 1 !important;
-
-        visibility: visible !important;
-    }
-
-
-    /* =====================================================
-       MENU ITEMS
-       ===================================================== */
-
-    header nav ul li {
-        display: block !important;
-
-        width: 100% !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-
-    /* =====================================================
-       MENU LINKS
-       ===================================================== */
-
-    header nav ul li a {
-        display: block !important;
-
-        width: 100% !important;
-
-        margin: 0 !important;
-
-        padding: 15px 25px !important;
-
-        box-sizing: border-box !important;
-
-        color: var(--white) !important;
-
-        text-decoration: none !important;
-
-        white-space: normal !important;
-    }
-
-
-    /* =====================================================
-       MENU HOVER
-       ===================================================== */
-
-    header nav ul li a:hover {
-        background: var(--secondary) !important;
-
-        color: var(--accent) !important;
-    }
-
-
-    /* =====================================================
-       CONTENT BELOW FIXED HEADER
-       ===================================================== */
-
-    body {
-        padding-top: 70px !important;
-    }
-}
-
-
-/* =========================================================
-   VERY SMALL MOBILE - 450px AND BELOW
-   ========================================================= */
-
-@media screen and (max-width: 450px) {
-
-    .site-footer .footer-container {
-        grid-template-columns: 1fr !important;
-
-        gap: 25px !important;
-
-        text-align: center;
-    }
-
-    .site-footer .footer-logo,
-    .site-footer .footer-brand,
-    .site-footer .footer-column {
-        text-align: center !important;
-    }
-
-    .site-footer .social-links {
-        justify-content: center !important;
-    }
-
-    .site-footer .footer-column h3::after {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .site-footer .footer-contact p {
         justify-content: center;
     }
 
+
+    nav ul li {
+        margin: 8px;
+    }
+
+
+    /* Footer */
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 50px 35px;
+    }
+
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+
 }
 
 
+/* =========================================================
+   TABLET / SMALL LAPTOP
+========================================================= */
+
+@media screen and (max-width: 700px) {
+
+    /* Header */
+
+    header {
+        padding: 8px 5%;
+    }
+
+
+    /* Hero */
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+
+    /* Sections */
+
+    section {
+        padding: 60px 7%;
+    }
+
+
+    .section-title {
+        font-size: 2.2rem;
+
+        margin-bottom: 35px;
+    }
+
+
+    /* About */
+
+    .about {
+        flex-direction: column;
+
+        gap: 30px;
+    }
+
+
+    .about img {
+        width: 80%;
+    }
+
+
+    .about-text {
+        width: 90%;
+    }
+
+
+    /* Footer */
+
+    .footer-container {
+        width: 90%;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 40px 25px;
+    }
+
+}
 
 
 /* =========================================================
    MOBILE NAVIGATION
 ========================================================= */
-
-@media screen and (max-width: 600px) {
-
-    header {
-        padding: 10px 5%;
-    }
-
-    .logo h1 {
-        font-size: 1.4rem;
-    }
-
-    .burger-nav {
-        font-size: 1.8rem;
-    }
-
-    /* Mobile dropdown */
-
-    header nav ul.open {
-        max-height: 350px;
-        padding: 8px 0;
-    }
-
-    header nav ul li a {
-        padding: 14px 20px;
-        font-size: 1rem;
-    }
-
-}
 
 @media screen and (max-width: 600px) {
 
@@ -1976,556 +1602,840 @@ section {
     }
 
 }
-
 /* =========================================================
-   FINAL FOOTER - SINGLE ROW
-   Works with the current 3 footer blocks:
-   1. Brand + Logo
-   2. Contact Us
-   3. Visit Us
+   FINAL RESPONSIVE HEADER OVERRIDES
    ========================================================= */
 
-.site-footer {
-    width: 100%;
+/* 701px TO 960px - SINGLE ROW NAVIGATION */
+@media screen and (min-width: 701px) and (max-width: 960px) {
+    header {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 10px 5% !important;
+        box-sizing: border-box !important;
+        z-index: 99999 !important;
+    }
+
+    header .wrapper,
+    header nav,
+    .all {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .bay {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        flex-wrap: nowrap !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .logo {
+        width: auto !important;
+        display: flex !important;
+        align-items: center !important;
+        flex-shrink: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .logo h1 {
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 1.5rem !important;
+        line-height: 1.2 !important;
+        white-space: nowrap !important;
+    }
+
+    .burger-nav {
+        display: none !important;
+        visibility: hidden !important;
+        width: 0 !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .just {
+        width: auto !important;
+        display: flex !important;
+        flex: 1 1 auto !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        min-width: 0 !important;
+        margin-left: auto !important;
+        padding: 0 !important;
+    }
+
+    .just ul,
+    header nav ul {
+        position: static !important;
+        width: auto !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        flex-wrap: nowrap !important;
+        gap: 12px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        background: transparent !important;
+    }
+
+    .just ul li,
+    header nav ul li {
+        display: block !important;
+        width: auto !important;
+        height: auto !important;
+        flex: 0 0 auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .just ul li a,
+    header nav ul li a {
+        display: block !important;
+        width: auto !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 7px 3px !important;
+        font-size: 0.95rem !important;
+        line-height: 1.2 !important;
+        white-space: nowrap !important;
+        text-decoration: none !important;
+    }
+
+    body {
+        padding-top: 70px !important;
+    }
+
+    #home,
+    #about,
+    #menu,
+    #gallery,
+    #contact {
+        scroll-margin-top: 80px !important;
+    }
 }
 
+
+/* 700px AND BELOW - HAMBURGER MENU */
+@media screen and (max-width: 700px) {
+    html,
+    body {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow-x: hidden !important;
+    }
+
+    header {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 10px 5% !important;
+        box-sizing: border-box !important;
+        z-index: 99999 !important;
+    }
+
+    header .wrapper,
+    header nav,
+    .all {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .bay {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        flex-wrap: nowrap !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .logo {
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        flex-shrink: 1 !important;
+    }
+
+    .logo h1 {
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 1.5rem !important;
+        line-height: 1.2 !important;
+        white-space: nowrap !important;
+    }
+
+    .burger-nav {
+        display: block !important;
+        visibility: visible !important;
+        width: auto !important;
+        height: auto !important;
+        margin-left: auto !important;
+        padding: 0 !important;
+        font-size: 1.8rem !important;
+        line-height: 1 !important;
+        font-weight: bold !important;
+        color: var(--woah) !important;
+        text-decoration: none !important;
+        cursor: pointer !important;
+        flex-shrink: 0 !important;
+        z-index: 100001 !important;
+    }
+
+    .just {
+        position: static !important;
+        width: 0 !important;
+        flex: 0 0 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    header nav ul {
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        flex-wrap: nowrap !important;
+        list-style: none !important;
+        background: var(--primary) !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+        height: auto !important;
+        max-height: 0 !important;
+        overflow: hidden !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        z-index: 100000 !important;
+        transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    header nav ul.open {
+        height: auto !important;
+        max-height: 400px !important;
+        padding: 2px 0 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        justify-content: flex-start !important;
+    }
+
+    header nav ul li {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        flex: 0 0 auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    header nav ul li a {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 8px 27px !important;
+        box-sizing: border-box !important;
+        color: var(--white) !important;
+        font-size: 1rem !important;
+        line-height: 1.2 !important;
+        text-align: left !important;
+        text-decoration: none !important;
+        white-space: nowrap !important;
+    }
+
+    header nav ul li a:hover {
+        background: var(--secondary) !important;
+        color: var(--accent) !important;
+    }
+
+    body {
+        padding-top: 65px !important;
+    }
+
+    #home,
+    #about,
+    #menu,
+    #gallery,
+    #contact {
+        scroll-margin-top: 75px !important;
+    }
+}
+
+
+/* 450px AND BELOW - SMALL MOBILE */
+@media screen and (max-width: 450px) {
+    .logo h1 {
+        font-size: 1.4rem !important;
+    }
+
+    .burger-nav {
+        font-size: 1.7rem !important;
+    }
+
+    header nav ul li a {
+        padding: 7px 22px !important;
+        font-size: 0.95rem !important;
+    }
+}
+
+/* =========================================================
+   FINAL FOOTER - 4 COLUMNS / SINGLE ROW / LOGO ALIGNMENT
+   ========================================================= */
 .footer-container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 90% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
     display: grid !important;
-    grid-template-columns: 1.35fr 1.1fr 1.1fr !important;
-    gap: 45px;
-    padding: 35px 0 25px;
-    align-items: start;
+    grid-template-columns: 0.75fr 1.15fr 1.25fr 1.25fr !important;
+    gap: 35px !important;
+    padding: 40px 0 30px !important;
+    align-items: center !important;
 }
 
-/* BRAND: logo and brand details stay together horizontally */
+.footer-logo {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    min-width: 0 !important;
+}
+
+.footer-logo img {
+    width: 100px !important;
+    height: 100px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    display: block !important;
+    margin: 0 !important;
+}
+
 .footer-brand {
-    display: grid;
-    grid-template-columns: 90px 1fr;
-    grid-template-rows: auto auto auto auto;
-    column-gap: 22px;
-    align-items: center;
-    text-align: left;
+    text-align: left !important;
+    width: 100% !important;
+    min-width: 0 !important;
 }
 
-.footer-brand img {
-    grid-column: 1;
-    grid-row: 1 / 5;
-    width: 90px;
-    height: 90px;
-    margin: 0;
-    object-fit: contain;
-    border-radius: 50%;
+.footer-brand > img {
+    display: none !important;
 }
 
 .footer-brand h2 {
-    grid-column: 2;
-    grid-row: 1;
-    margin: 0;
-    font-size: 1.7rem;
-    letter-spacing: 2px;
+    margin: 0 !important;
+    font-size: 1.7rem !important;
+    letter-spacing: 2px !important;
 }
 
 .footer-brand h3 {
-    grid-column: 2;
-    grid-row: 2;
-    margin: 3px 0 0;
-    font-size: 1rem;
+    margin: 4px 0 0 !important;
+    font-size: 1rem !important;
 }
 
 .footer-brand p {
-    grid-column: 2;
-    grid-row: 3;
-    margin: 9px 0 0;
-    font-size: 0.8rem;
-    line-height: 1.45;
+    margin: 10px 0 0 !important;
+    font-size: 0.82rem !important;
+    line-height: 1.5 !important;
 }
 
-.social-links {
-    grid-column: 2;
-    grid-row: 4;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 10px;
-    margin-top: 10px;
+.footer-brand .social-links {
+    justify-content: flex-start !important;
+    gap: 10px !important;
+    margin-top: 14px !important;
 }
 
-.social-links a {
-    width: 38px;
-    height: 38px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid var(--accent);
-    border-radius: 50%;
-    color: var(--accent);
-    font-size: 17px;
-    transition: 0.3s ease;
+.footer-brand .social-links a {
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 18px !important;
 }
 
-.social-links a:hover {
-    background: var(--accent);
-    color: var(--primary);
-    transform: translateY(-3px);
-}
-
-/* CONTACT + VISIT */
 .footer-column {
-    text-align: left;
+    text-align: left !important;
+    width: 100% !important;
+    min-width: 0 !important;
 }
 
 .footer-column h3 {
-    margin: 0 0 14px;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    color: var(--accent);
+    margin: 0 0 14px !important;
+    font-size: 1rem !important;
+    letter-spacing: 1px !important;
 }
 
 .footer-column h3::after {
-    content: "";
-    display: block;
-    width: 35px;
-    height: 2px;
-    background: var(--accent);
-    margin-top: 6px;
+    content: "" !important;
+    display: block !important;
+    width: 35px !important;
+    height: 2px !important;
+    margin-top: 6px !important;
 }
 
 .footer-contact p {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    margin: 0 0 9px;
-    line-height: 1.3;
-}
-
-.footer-contact p span {
-    min-width: 20px;
-    font-size: 0.9rem;
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    margin: 0 0 9px !important;
+    line-height: 1.3 !important;
 }
 
 .footer-contact a {
-    color: var(--light);
-    font-size: 0.78rem;
-    word-break: break-word;
+    font-size: 0.78rem !important;
+    word-break: break-word !important;
 }
 
 .visit-text {
-    margin: 0;
-    color: var(--light);
-    font-size: 0.8rem;
-    line-height: 1.5;
+    margin: 0 !important;
+    font-size: 0.8rem !important;
+    line-height: 1.5 !important;
 }
 
 .footer-message {
-    margin-top: 12px;
-    color: var(--accent);
-    font-size: 0.8rem;
-    font-style: italic;
+    margin-top: 12px !important;
+    font-size: 0.8rem !important;
 }
 
-.footer-bottom {
-    padding: 12px 10px;
-}
-
-.footer-bottom p {
-    font-size: 0.72rem;
-}
-
-/* =========================================================
-   TABLET / DESKTOP: KEEP ALL FOOTER CONTENT IN ONE ROW
-   ========================================================= */
-
-@media screen and (max-width: 960px) {
+/* 701px - 960px: keep footer in one row */
+@media screen and (min-width: 701px) and (max-width: 960px) {
     .footer-container {
-        width: 94%;
-        grid-template-columns: 1.3fr 1fr 1fr !important;
-        gap: 22px;
-        padding: 30px 0 22px;
+        width: 94% !important;
+        grid-template-columns: 0.75fr 1.15fr 1.25fr 1.25fr !important;
+        gap: 20px !important;
+        padding: 30px 0 25px !important;
+        align-items: center !important;
     }
 
-    .footer-brand {
-        grid-template-columns: 75px 1fr;
-        column-gap: 15px;
-    }
-
-    .footer-brand img {
-        width: 75px;
-        height: 75px;
+    .footer-logo img {
+        width: 85px !important;
+        height: 85px !important;
     }
 
     .footer-brand h2 {
-        font-size: 1.5rem;
+        font-size: 1.45rem !important;
     }
 
     .footer-brand h3 {
-        font-size: 0.9rem;
+        font-size: 0.9rem !important;
     }
 
     .footer-brand p,
     .visit-text {
-        font-size: 0.76rem;
-    }
-
-    .social-links {
-        gap: 8px;
-        margin-top: 7px;
-    }
-
-    .social-links a {
-        width: 34px;
-        height: 34px;
-        font-size: 16px;
+        font-size: 0.72rem !important;
     }
 
     .footer-column h3 {
-        font-size: 0.95rem;
-        margin-bottom: 12px;
+        font-size: 0.9rem !important;
     }
 
     .footer-contact a {
-        font-size: 0.74rem;
+        font-size: 0.7rem !important;
+    }
+
+    .footer-brand .social-links a {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 16px !important;
     }
 }
 
-/* =========================================================
-   MOBILE: 2 COLUMNS
-   ========================================================= */
-
+/* 700px and below: footer becomes two columns */
 @media screen and (max-width: 700px) {
     .footer-container {
-        width: 90%;
+        width: 90% !important;
         grid-template-columns: 1fr 1fr !important;
-        gap: 25px 20px;
-        padding: 30px 0 22px;
+        gap: 25px 20px !important;
+        padding: 30px 0 25px !important;
+        align-items: start !important;
+    }
+
+    .footer-logo img {
+        width: 75px !important;
+        height: 75px !important;
     }
 
     .footer-brand {
-        grid-column: 1 / -1;
-        grid-template-columns: 75px 1fr;
-    }
-}
-
-/* =========================================================
-   SMALL MOBILE: 1 COLUMN
-   ========================================================= */
-
-@media screen and (max-width: 450px) {
-    .footer-container {
-        grid-template-columns: 1fr !important;
-        gap: 22px;
-        text-align: center;
+        text-align: left !important;
     }
 
-    .footer-brand {
-        grid-column: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .footer-brand img {
-        width: 65px;
-        height: 65px;
-        margin-bottom: 8px;
-    }
-
-    .footer-brand h2,
-    .footer-brand h3,
-    .footer-brand p,
-    .social-links {
-        display: block;
-    }
-
-    .footer-brand h2 {
-        font-size: 1.3rem;
-    }
-
-    .footer-brand h3 {
-        font-size: 0.85rem;
-    }
-
-    .footer-brand p {
-        font-size: 0.75rem;
-        line-height: 1.35;
-    }
-
-    .social-links {
-        display: flex;
-        justify-content: center;
-        margin-top: 9px;
+    .footer-brand .social-links {
+        justify-content: flex-start !important;
     }
 
     .footer-column {
-        text-align: center;
+        text-align: left !important;
+    }
+}
+
+/* 450px and below: one footer column */
+@media screen and (max-width: 450px) {
+    .footer-container {
+        grid-template-columns: 1fr !important;
+        gap: 25px !important;
+        text-align: center !important;
+    }
+
+    .footer-logo,
+    .footer-brand,
+    .footer-column {
+        text-align: center !important;
+    }
+
+    .footer-logo {
+        justify-content: center !important;
+    }
+
+    .footer-brand .social-links {
+        justify-content: center !important;
     }
 
     .footer-column h3::after {
-        margin-left: auto;
-        margin-right: auto;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
 
     .footer-contact p {
-        justify-content: center;
+        justify-content: center !important;
     }
 }
 
 
 /* =========================================================
-   FINAL FIX - WHITE BAY FOOTER
-   4 COLUMNS / SINGLE ROW ABOVE 700px
+   FINAL FOOTER RESPONSIVE OVERRIDE
+   960px AND BELOW = 2 x 2
+   700px AND BELOW = 2 x 2
+   450px AND BELOW = 1 COLUMN
    ========================================================= */
 
-.site-footer {
-    width: 100%;
-    overflow: hidden;
+@media screen and (max-width: 960px) {
+
+    .footer-container {
+        width: 90% !important;
+
+        display: grid !important;
+
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: auto auto !important;
+
+        gap: 35px 30px !important;
+
+        padding: 35px 0 30px !important;
+
+        align-items: center !important;
+    }
+
+    /* ---------------------------------------------
+       ROW 1 - LOGO + WHITE BAY
+       --------------------------------------------- */
+
+    .footer-logo {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .footer-logo img {
+        width: 90px !important;
+        height: 90px !important;
+
+        border-radius: 50% !important;
+        object-fit: cover !important;
+
+        display: block !important;
+        margin: 0 !important;
+    }
+
+    .footer-brand {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+
+        text-align: left !important;
+    }
+
+    .footer-brand h2 {
+        font-size: 1.5rem !important;
+        margin: 0 !important;
+    }
+
+    .footer-brand h3 {
+        font-size: 0.95rem !important;
+        margin: 4px 0 0 !important;
+    }
+
+    .footer-brand p {
+        font-size: 0.78rem !important;
+        line-height: 1.4 !important;
+        margin: 9px 0 0 !important;
+    }
+
+    .footer-brand .social-links {
+        justify-content: flex-start !important;
+        gap: 9px !important;
+        margin-top: 12px !important;
+    }
+
+    .footer-brand .social-links a {
+        width: 38px !important;
+        height: 38px !important;
+        font-size: 16px !important;
+    }
+
+    /* ---------------------------------------------
+       ROW 2 - CONTACT + VISIT
+       Direct-child selectors guarantee the
+       correct columns with the existing HTML.
+       --------------------------------------------- */
+
+    .footer-container > .footer-column:nth-child(3) {
+        grid-column: 1 !important;
+        grid-row: 2 !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+
+        text-align: left !important;
+    }
+
+    .footer-container > .footer-column:nth-child(4) {
+        grid-column: 2 !important;
+        grid-row: 2 !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+
+        text-align: left !important;
+    }
+
+    .footer-column h3 {
+        font-size: 0.95rem !important;
+        margin: 0 0 12px !important;
+    }
+
+    .footer-contact p {
+        margin: 0 0 8px !important;
+        gap: 7px !important;
+    }
+
+    .footer-contact a {
+        font-size: 0.74rem !important;
+    }
+
+    .visit-text {
+        font-size: 0.78rem !important;
+        line-height: 1.45 !important;
+    }
+
+    .footer-message {
+        font-size: 0.78rem !important;
+        margin-top: 10px !important;
+    }
 }
 
-.site-footer .footer-container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-
-    display: grid !important;
-    grid-template-columns: 0.65fr 1.15fr 1.25fr 1.25fr !important;
-
-    grid-auto-flow: row;
-    gap: 30px;
-    align-items: start;
-
-    padding: 35px 0 25px;
-}
-
-/* Make every direct child occupy exactly one footer column */
-.site-footer .footer-container > .footer-logo,
-.site-footer .footer-container > .footer-brand,
-.site-footer .footer-container > .footer-column {
-    grid-column: auto !important;
-    grid-row: auto !important;
-    min-width: 0;
-}
-
-/* COLUMN 1 - LOGO */
-.site-footer .footer-logo {
-    display: flex !important;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.site-footer .footer-logo img {
-    width: 90px;
-    height: 90px;
-    max-width: 100%;
-    object-fit: contain;
-    border-radius: 50%;
-}
-
-/* COLUMN 2 - BRAND */
-.site-footer .footer-brand {
-    display: block !important;
-    text-align: left;
-}
-
-.site-footer .footer-brand img {
-    display: none !important;
-}
-
-.site-footer .footer-brand h2 {
-    margin: 0;
-    font-size: 1.7rem;
-    line-height: 1.15;
-    letter-spacing: 2px;
-}
-
-.site-footer .footer-brand h3 {
-    margin: 5px 0 0;
-    font-size: 1rem;
-}
-
-.site-footer .footer-brand p {
-    margin: 10px 0 0;
-    font-size: 0.8rem;
-    line-height: 1.5;
-}
-
-/* SOCIAL ICONS */
-.site-footer .social-links {
-    display: flex !important;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 10px;
-    margin-top: 12px;
-}
-
-.site-footer .social-links a {
-    width: 38px;
-    height: 38px;
-    flex: 0 0 38px;
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid var(--accent);
-    border-radius: 50%;
-}
-
-/* COLUMNS 3 + 4 */
-.site-footer .footer-column {
-    display: block !important;
-    text-align: left;
-}
-
-.site-footer .footer-column h3 {
-    margin: 0 0 14px;
-    font-size: 1rem;
-    line-height: 1.2;
-    letter-spacing: 1px;
-}
-
-.site-footer .footer-column h3::after {
-    content: "";
-    display: block;
-    width: 35px;
-    height: 2px;
-    background: var(--accent);
-    margin-top: 6px;
-}
-
-.site-footer .footer-contact p {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    margin: 0 0 9px;
-    line-height: 1.3;
-}
-
-.site-footer .footer-contact p span {
-    min-width: 20px;
-    flex: 0 0 20px;
-}
-
-.site-footer .footer-contact a {
-    font-size: 0.78rem;
-    word-break: break-word;
-}
-
-.site-footer .visit-text {
-    margin: 0;
-    font-size: 0.8rem;
-    line-height: 1.5;
-}
-
-.site-footer .footer-message {
-    margin-top: 12px;
-    font-size: 0.8rem;
-    font-style: italic;
-}
 
 /* =========================================================
    701px - 960px
-   STILL 4 COLUMNS IN ONE ROW
+   KEEP FOOTER 2 x 2
    ========================================================= */
 
 @media screen and (min-width: 701px) and (max-width: 960px) {
 
-    .site-footer .footer-container {
-        width: 94%;
-        grid-template-columns: 0.55fr 1.1fr 1.25fr 1.25fr !important;
-        gap: 18px;
-        padding: 30px 0 22px;
+    .footer-container {
+        width: 90% !important;
+
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: auto auto !important;
+
+        gap: 35px 45px !important;
+
+        padding: 35px 0 30px !important;
     }
 
-    .site-footer .footer-logo img {
-        width: 75px;
-        height: 75px;
+    .footer-logo img {
+        width: 95px !important;
+        height: 95px !important;
     }
 
-    .site-footer .footer-brand h2 {
-        font-size: 1.45rem;
+    .footer-brand h2 {
+        font-size: 1.55rem !important;
     }
 
-    .site-footer .footer-brand h3 {
-        font-size: 0.9rem;
+    .footer-brand h3 {
+        font-size: 0.95rem !important;
     }
 
-    .site-footer .footer-brand p,
-    .site-footer .visit-text {
-        font-size: 0.74rem;
+    .footer-brand p,
+    .visit-text {
+        font-size: 0.8rem !important;
     }
 
-    .site-footer .social-links {
-        gap: 7px;
-    }
-
-    .site-footer .social-links a {
-        width: 34px;
-        height: 34px;
-        flex-basis: 34px;
-        font-size: 15px;
-    }
-
-    .site-footer .footer-column h3 {
-        font-size: 0.9rem;
-    }
-
-    .site-footer .footer-contact a {
-        font-size: 0.7rem;
+    .footer-contact a {
+        font-size: 0.76rem !important;
     }
 }
 
+
 /* =========================================================
-   MOBILE - 2 COLUMNS BELOW 700px
+   700px AND BELOW
+   FOOTER REMAINS 2 x 2
    ========================================================= */
 
 @media screen and (max-width: 700px) {
 
-    .site-footer .footer-container {
-        width: 90%;
+    .footer-container {
+        width: 90% !important;
+
         grid-template-columns: 1fr 1fr !important;
-        gap: 25px 20px;
-        padding: 30px 0 22px;
+        grid-template-rows: auto auto !important;
+
+        gap: 25px 20px !important;
+
+        padding: 30px 0 25px !important;
+
+        align-items: start !important;
     }
 
-    .site-footer .footer-logo img {
-        width: 75px;
-        height: 75px;
+    .footer-logo {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
     }
 
-    .site-footer .footer-brand {
-        text-align: left;
+    .footer-brand {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+    }
+
+    .footer-container > .footer-column:nth-child(3) {
+        grid-column: 1 !important;
+        grid-row: 2 !important;
+    }
+
+    .footer-container > .footer-column:nth-child(4) {
+        grid-column: 2 !important;
+        grid-row: 2 !important;
+    }
+
+    .footer-logo img {
+        width: 75px !important;
+        height: 75px !important;
+    }
+
+    .footer-brand h2 {
+        font-size: 1.35rem !important;
+    }
+
+    .footer-brand h3 {
+        font-size: 0.85rem !important;
+    }
+
+    .footer-brand p,
+    .visit-text {
+        font-size: 0.7rem !important;
+        line-height: 1.4 !important;
+    }
+
+    .footer-contact a {
+        font-size: 0.68rem !important;
+    }
+
+    .footer-brand .social-links {
+        justify-content: flex-start !important;
+    }
+
+    .footer-column h3 {
+        font-size: 0.85rem !important;
     }
 }
 
+
 /* =========================================================
-   SMALL MOBILE - 1 COLUMN
+   450px AND BELOW
+   ONE COLUMN
    ========================================================= */
 
 @media screen and (max-width: 450px) {
 
-    .site-footer .footer-container {
+    .footer-container {
         grid-template-columns: 1fr !important;
-        gap: 25px;
-        text-align: center;
+        grid-template-rows: auto !important;
+
+        gap: 25px !important;
+
+        text-align: center !important;
     }
 
-    .site-footer .footer-logo,
-    .site-footer .footer-brand,
-    .site-footer .footer-column {
-        text-align: center;
+    .footer-logo,
+    .footer-brand,
+    .footer-container > .footer-column:nth-child(3),
+    .footer-container > .footer-column:nth-child(4) {
+        grid-column: 1 !important;
+        width: 100% !important;
+        text-align: center !important;
     }
 
-    .site-footer .social-links {
-        justify-content: center;
+    .footer-logo {
+        grid-row: 1 !important;
+        justify-content: center !important;
     }
 
-    .site-footer .footer-column h3::after {
-        margin-left: auto;
-        margin-right: auto;
+    .footer-brand {
+        grid-row: 2 !important;
     }
 
-    .site-footer .footer-contact p {
-        justify-content: center;
+    .footer-container > .footer-column:nth-child(3) {
+        grid-row: 3 !important;
+    }
+
+    .footer-container > .footer-column:nth-child(4) {
+        grid-row: 4 !important;
+    }
+
+    .footer-brand .social-links {
+        justify-content: center !important;
+    }
+
+    .footer-column h3::after {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .footer-contact p {
+        justify-content: center !important;
     }
 }
